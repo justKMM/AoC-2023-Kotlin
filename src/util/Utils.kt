@@ -1,4 +1,4 @@
-package day01
+package util
 
 import java.math.BigInteger
 import java.security.MessageDigest
