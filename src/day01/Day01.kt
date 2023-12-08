@@ -3,10 +3,10 @@ package day01
 import util.readInput
 
 fun main() {
-
-    val input = readInput("01")
+    // input
+    val input = readInput(day = "01")
     var sum = 0
-    //Iterate through strings
+    //Iterate through strings of input
     for (string in input) {
         var num = ""
         // Iterate through each string
