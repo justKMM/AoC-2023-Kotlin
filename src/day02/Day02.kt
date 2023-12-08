@@ -11,10 +11,13 @@ val input = readInput(day = "02")
 
 
 fun main() {
-    part_2()
+    println("Part 1: ${part_1()}r")
+    println("Part 2: ${part_2()}")
 }
 
-// Part 1
+/*
+ * Part 1
+ */
 // max cubes of colors
 const val red_max = 12
 const val green_max = 13
@@ -67,7 +70,9 @@ fun checkColor(color: String, num: Int): Boolean {
 
 
 
-// Part 2
+/*
+ * Part 2
+ */
 // min number of cubes of each color of each turn
 var red = 0
 var blue = 0
