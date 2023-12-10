@@ -2,17 +2,16 @@ package day02
 
 import util.readInput
 import java.util.*
-import kotlin.reflect.typeOf
-
-
 
 // input
 val input = readInput(day = "02")
 
 
 fun main() {
-    println("Part 1: ${part_1()}r")
-    println("Part 2: ${part_2()}")
+    print("Part 1: ")
+    part_1()
+    print("Part 2: ")
+    part_2()
 }
 
 /*
@@ -29,19 +28,19 @@ fun part_1() {
     // iterate through strings of input
     for (string in input) {
         // init Scanner
-        var sc = Scanner(string)
+        val sc = Scanner(string)
         var valid = true
         // string "Game"
         sc.next()
         // remove ":", convert to int
-        var id = sc.next().removeSuffix(suffix = ":").toInt()
+        val id = sc.next().removeSuffix(suffix = ":").toInt()
         // loop through not-last colors of turn
         while (sc.hasNext()) {
             // next number & color (suffix "," and ";" removed)
-            var num = sc.nextInt()
-            var color = sc.next().removeSuffix(",").removeSuffix(";")
+            val num = sc.nextInt()
+            val color = sc.next().removeSuffix(",").removeSuffix(";")
             // call function to check whether number of cubes is valid, return a bool
-            var check = checkColor(color = color, num = num)
+            val check = checkColor(color = color, num = num)
             // if number of cubes not within allowed range
             if (!check) {
                 valid = false
@@ -55,7 +54,7 @@ fun part_1() {
         sc.close()
     }
 
-    print(sum)
+    println(sum)
 }
 
 // function to check if number of cubes is within allowed range (0 -> max)
@@ -82,24 +81,22 @@ fun part_2() {
     // iterate through strings of input (through games)
     for (string in input) {
         // reset max values of each cube type
-        red = 0; blue = 0; green = 0;
+        red = 0; blue = 0; green = 0
         // init Scanner
-        var sc = Scanner(string)
+        val sc = Scanner(string)
         // string "Game"
         sc.next()
-        // remove ":", convert to int
-        var id = sc.next().removeSuffix(suffix = ":").toInt()
         // split string of game to an array of turns in that game
-        var data_arr = sc.nextLine().split(";")
+        val data_arr = sc.nextLine().split(";")
         // iterate through these turns
         for (inner_arr in data_arr) {
             // init inner scanner
-            var scanner = Scanner(inner_arr)
+            val scanner = Scanner(inner_arr)
             // iterate through inner scanner
             while (scanner.hasNext()) {
                 // next number & color (suffix "," and ";" removed)
-                var num = scanner.nextInt()
-                var color = scanner.next().removeSuffix(",")
+                val num = scanner.nextInt()
+                val color = scanner.next().removeSuffix(",")
                 // call function to find min number of cubes
                 checkColor_2(color = color, num = num)
             }
@@ -107,7 +104,7 @@ fun part_2() {
         sum += red*blue*green
 
     }
-    print(sum)
+    println(sum)
 
 }
 
